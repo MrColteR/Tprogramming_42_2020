@@ -45,7 +45,7 @@ namespace CourseApp
             const double a = 2.0;
             const double b = 1.1;
             Console.WriteLine($"--------- TASK A --------------");
-            var taskA = TaskA(a, b, 0.8, 1.08, 0.2);
+            var taskA = TaskA(a, b, 0.08, 1.08, 0.2);
             foreach (var item in taskA)
             {
                 var(x, y) = item;
