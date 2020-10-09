@@ -12,35 +12,35 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestFunction1()
+        public void NumenatorEqualZero()
         {
             var actualResult = Program.Calc(1, 2, 2);
             Assert.Equal(double.NaN, actualResult);
         }
 
         [Fact]
-        public void TestFunction2()
+        public void DenominatorEqualZero()
         {
             var actualResult = Program.Calc(1, 1, 0);
             Assert.Equal(double.NaN, actualResult);
         }
 
         [Fact]
-        public void TestFunction3()
+        public void LogEqualZero()
         {
             var actualResult = Program.Calc(1, 0, 0);
             Assert.Equal(double.NaN, actualResult);
         }
 
         [Fact]
-        public void TestFunction4()
+        public void ArrayLenght()
         {
             var actualResult = Program.TaskA(2, 1.1, 0.08, 1.08, 0.2);
             Assert.Equal(6, actualResult.Length);
         }
 
         [Fact]
-        public void TestFunction5()
+        public void Array()
         {
             var actualResult = Program.TaskA(2, 1.1, 1, 6, 1);
             Assert.Equal(6, actualResult.Length);
@@ -53,7 +53,7 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestFunction6()
+        public void ArrayOfTwoElements()
         {
             var actualResult = Program.TaskA(2, 1.1, 1, 2, 1);
             Assert.Equal(2, actualResult.Length);
@@ -66,7 +66,7 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestFunction7()
+        public void ArrayOfThreeElements()
         {
             double[] xTest = { 1, 2, 3 };
             var actualResult = Program.TaskB(2, 1.1, xTest);
@@ -74,12 +74,26 @@ namespace CourseApp.Tests
         }
 
         [Fact]
-        public void TestFunction8()
+        public void ArrayOfZeroElements()
         {
             double[] xTest = { };
             var actualResult = Program.TaskB(2, 1, xTest);
             var a = actualResult.Length;
             Assert.Equal(0, a);
+        }
+
+        [Fact]
+        public void RootOfFive()
+        {
+            var actualResult = Program.CubeRoot(-32);
+            Assert.Equal(-2, actualResult);
+        }
+
+        [Fact]
+        public void RootOfFive2()
+        {
+            var actualResult = Program.CubeRoot(32);
+            Assert.Equal(2, actualResult);
         }
     }
 }

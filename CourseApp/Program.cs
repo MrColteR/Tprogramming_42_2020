@@ -7,7 +7,8 @@ namespace CourseApp
         public static double Calc(double a, double b, double x)
         {
             var numerator = Math.Log(Math.Abs(Math.Pow(b, 2) - Math.Pow(x, 2)), a);
-            var denominator = Math.Pow(Math.Abs(Math.Pow(x, 2) - Math.Pow(a, 2)), 1 / 5.0);
+            var denominator = Math.Abs(Math.Pow(x, 2) - Math.Pow(a, 2));
+            CubeRoot(denominator);
             var y = numerator / denominator;
             return y;
         }
@@ -53,7 +54,7 @@ namespace CourseApp
             }
 
             Console.WriteLine($"--------- TASK B --------------");
-            double[] xItems = { 0.1, 1.3, 0.4, 0.45, 0.65 };
+            double[] xItems = { 0.1, 0.3, 0.4, 0.45, 0.65 };
             var taskB = TaskB(a, b, xItems);
             foreach (var item in taskB)
             {
@@ -63,6 +64,18 @@ namespace CourseApp
 
             Console.WriteLine("Hello World!");
             Console.ReadLine();
+        }
+
+        public static double CubeRoot(double x)
+        {
+            if (x < 0)
+                {
+                    return -Math.Pow(-x, 1d / 5d);
+                }
+            else
+                {
+                    return Math.Pow(x, 1d / 5d);
+                }
         }
     }
 }
