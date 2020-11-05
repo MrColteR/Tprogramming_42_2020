@@ -6,27 +6,40 @@ namespace CourseApp
     {
         private int population;
         private int area;
+        private double density;
 
         public Country()
         {
             this.population = 0;
             this.area = 0;
+            this.density = 0;
         }
 
-        public Country(int population, int area)
+        public Country(int population, int area, double density)
         {
             this.population = population;
             this.area = area;
-            if (area <= 0 && population <= 0)
-            {
-                this.area = 1;
-                this.population = 1;
-            }
+            this.density = density;
         }
 
-        public void Hello()
+        public void AllInfo()
         {
-            Console.WriteLine($"Насление: {population} , площадь: {area} ");
+            Console.WriteLine($"Насление: {this.population} , площадь: {this.area} , плотность насление: {this.density} ");
+        }
+
+        public void PopulationInfo()
+        {
+            Console.WriteLine($"Население: {this.population}");
+        }
+
+        public void AreaInfo()
+        {
+            Console.WriteLine($"Площадь: {this.area}");
+        }
+
+        public void DensityInfo()
+        {
+            Console.WriteLine($"Плотность населения: {this.density}");
         }
     }
 }

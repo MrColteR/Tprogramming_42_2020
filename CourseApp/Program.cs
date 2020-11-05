@@ -63,7 +63,19 @@ namespace CourseApp
             }
 
             Console.WriteLine("Hello World!");
-            Console.ReadLine();
+
+            var country1 = new Country();
+            country1.AllInfo();
+
+            var country2 = new Country(7420, 40, 185.5);
+            country2.AllInfo();
+
+            var country3 = new Country(13450, 100, 134.5);
+            country3.PopulationInfo();
+            country3.AreaInfo();
+            country3.DensityInfo();
+
+            Console.ReadKey();
         }
 
         public static double CubeRoot(double x)

@@ -5,6 +5,15 @@ namespace CourseApp.Tests
 {
     public class DemoTest
     {
+        [Theory]
+        [InlineData(0, 0, 0, double.NaN)]
+
+        public void TestCalcAllZero(double a, double b, double x, double exp)
+        {
+            var actualResult = Program.Calc(a, b, x);
+            Assert.Equal(exp, actualResult);
+        }
+
         [Fact]
         public void Test1()
         {
@@ -46,19 +55,6 @@ namespace CourseApp.Tests
             Assert.Equal(6, actualResult.Length);
             double[] expX = { 1, 2, 3, 4, 5, 6 };
             for (int i = 0; i <= 5; i++)
-            {
-                var (x, y) = actualResult[i];
-                Assert.Equal(expX[i], x, 1);
-            }
-        }
-
-        [Fact]
-        public void ArrayOfTwoElements()
-        {
-            var actualResult = Program.TaskA(2, 1.1, 1, 2, 1);
-            Assert.Equal(2, actualResult.Length);
-            double[] expX = { 1, 2 };
-            for (int i = 0; i < 1; i++)
             {
                 var (x, y) = actualResult[i];
                 Assert.Equal(expX[i], x, 1);
