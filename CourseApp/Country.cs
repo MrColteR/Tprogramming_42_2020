@@ -10,62 +10,96 @@ namespace CourseApp
 
         public Country()
         {
-            Console.WriteLine($"Население, площадь и плоность равны 0");
+            Console.WriteLine($"Население, площадь и плоность не заданы");
         }
 
         public Country(int population, int area, double density)
         {
-            this.population = population;
-            this.area = area;
-            this.density = density;
+            this.Population = population;
+            this.Area = area;
+            this.Density = density;
+        }
+
+        public int Population
+        {
+            get
+            {
+                return population;
+            }
+
+            set
+            {
+                if (value == 0)
+                {
+                    Console.WriteLine($"Население равна 0");
+                }
+                else
+                {
+                    population = value;
+                }
+            }
+        }
+
+        public int Area
+        {
+            get
+            {
+                return area;
+            }
+
+            set
+            {
+                if (value == 0)
+                {
+                    Console.WriteLine($"Площадь равна 0");
+                }
+                else
+                {
+                    area = value;
+                }
+            }
+        }
+
+        public double Density
+        {
+            get
+            {
+                return density;
+            }
+
+            set
+            {
+                if (value == 0)
+                {
+                    Console.WriteLine($"Плотность равна 0");
+                }
+                else
+                {
+                    density = value;
+                }
+            }
         }
 
         public void AllInfo()
         {
-            if (this.population != 0 || this.area != 0 || this.density != 0)
             {
-                Console.WriteLine($"Насление: {this.population} , площадь: {this.area} , плотность: {this.density} ");
-            }
-            else
-            {
-                Console.WriteLine($"Ошибка ввода данных");
+                Console.WriteLine($"Насление: {this.population}, площадь: {this.area}, плотность: {this.density} ");
             }
         }
 
         public void PopulationInfo()
         {
-            if (this.population != 0)
-            {
-                Console.WriteLine($"Население: {this.population}");
-            }
-            else
-            {
-                Console.WriteLine($"Население равна 0");
-            }
+            Console.WriteLine($"Население: {this.population}");
         }
 
         public void AreaInfo()
         {
-            if (this.area != 0)
-            {
-                Console.WriteLine($"Площадь: {this.area}");
-            }
-            else
-            {
-                Console.WriteLine($"Площадь равна 0");
-            }
+            Console.WriteLine($"Площадь: {this.area}");
         }
 
         public void DensityInfo()
         {
-            if (this.density != 0)
-            {
-                Console.WriteLine($"Плотность населения: {this.density}");
-            }
-            else
-            {
-                Console.WriteLine($"Плотность равна 0");
-            }
+            Console.WriteLine($"Плотность населения: {this.density}");
         }
     }
 }

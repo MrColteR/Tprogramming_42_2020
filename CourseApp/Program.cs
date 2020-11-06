@@ -66,10 +66,9 @@ namespace CourseApp
 
             var country1 = new Country();
             country1.AllInfo();
-
             var country2 = new Country(7420, 40, 185.5);
             country2.AllInfo();
-
+            country2.Population = 0;
             var country3 = new Country(13450, 100, 134.5);
             country3.PopulationInfo();
             country3.AreaInfo();
