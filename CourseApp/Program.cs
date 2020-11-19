@@ -73,6 +73,8 @@ namespace CourseApp
             country3.PopulationInfo();
             country3.AreaInfo();
             country3.DensityInfo();
+            var union1 = new Union(5);
+            union1.UnionInfo();
 
             Console.ReadKey();
         }
