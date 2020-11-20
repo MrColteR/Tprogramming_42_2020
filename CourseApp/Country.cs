@@ -80,6 +80,11 @@ namespace CourseApp
             }
         }
 
+        public override string ToString()
+        {
+            return $"Population = {Population}, Area = {Area}, Density = {Density}";
+        }
+
         public void AllInfo()
         {
             {
