@@ -83,23 +83,23 @@ namespace CourseApp
         public void AllInfo()
         {
             {
-                Console.WriteLine($"Насление: {this.population}, площадь: {this.area}, плотность: {this.density} ");
+                Console.WriteLine($"Насление: {population.ToString()}, площадь: {area.ToString()}, плотность: {density.ToString()} ");
             }
         }
 
         public void PopulationInfo()
         {
-            Console.WriteLine($"Население: {this.population}");
+            Console.WriteLine($"Население: {population.ToString()}");
         }
 
         public void AreaInfo()
         {
-            Console.WriteLine($"Площадь: {this.area}");
+            Console.WriteLine($"Площадь: {area.ToString()}");
         }
 
         public void DensityInfo()
         {
-            Console.WriteLine($"Плотность населения: {this.density}");
+            Console.WriteLine($"Плотность населения: {density.ToString()}");
         }
     }
 }
