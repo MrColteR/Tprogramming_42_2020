@@ -75,6 +75,18 @@ namespace CourseApp
             country3.DensityInfo();
             var union1 = new Union(5);
             union1.UnionInfo();
+            Console.WriteLine();
+
+            DateTime zeroTime = new DateTime(1, 1, 1);
+            DateTime olddate = new DateTime(2020, 12, 9);
+            Console.WriteLine(olddate);
+            DateTime curdate = DateTime.Now.ToLocalTime();
+            Console.WriteLine(curdate);
+            TimeSpan span = curdate - olddate;
+            int years = (zeroTime + span).Year - 1;
+            int months = (zeroTime + span).Month - 1;
+            int days = (zeroTime + span).Day - 1;
+            Console.WriteLine($"years = {years}, months = {months}, days = {days}");
 
             Console.ReadKey();
         }
