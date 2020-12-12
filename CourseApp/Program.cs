@@ -13,6 +13,16 @@ namespace CourseApp
             return y;
         }
 
+        public static string Date(DateTime olddate, DateTime zeroTime)
+        {
+            Console.WriteLine(olddate);
+            Console.WriteLine(zeroTime);
+            int years = zeroTime.Year - olddate.Year;
+            int months = zeroTime.Month - olddate.Month;
+            int days = zeroTime.Day - olddate.Day;
+            return $"years = {years}, months = {months}, days = {days}";
+        }
+
         public static (double x, double y)[] TaskA(double a, double b, double xn, double xk, double dx)
         {
             var res = new(double, double)[(int)Math.Ceiling((xk - xn) / dx) + 1];
@@ -77,16 +87,9 @@ namespace CourseApp
             union1.UnionInfo();
             Console.WriteLine();
 
-            DateTime zeroTime = new DateTime(1, 1, 1);
+            DateTime zeroTime = DateTime.Today;
             DateTime olddate = new DateTime(2020, 12, 9);
-            Console.WriteLine(olddate);
-            DateTime curdate = DateTime.Now.ToLocalTime();
-            Console.WriteLine(curdate);
-            TimeSpan span = curdate - olddate;
-            int years = (zeroTime + span).Year - 1;
-            int months = (zeroTime + span).Month - 1;
-            int days = (zeroTime + span).Day - 1;
-            Console.WriteLine($"years = {years}, months = {months}, days = {days}");
+            Console.WriteLine(Date(olddate, zeroTime));
 
             Console.ReadKey();
         }
