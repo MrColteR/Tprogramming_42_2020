@@ -5,49 +5,16 @@ namespace CourseApp.Tests
 {
     public class DataTests
     {
-        [Fact]
-        public void DataAfter()
+        [Theory]
+        [InlineData(2002, 10, 31, 2020, 12, 16, "Возраст: 18 лет(год), 1 месяцев(месяц), 16 дней(день)")]
+        [InlineData(2000, 12, 15, 2020, 12, 13, "Возраст: 19 лет(год), 11 месяцев(месяц), 29 дней(день)")]
+        [InlineData(2021, 12, 15, 2020, 12, 15, "Не верный возвраст")]
+        public void DateTest(int yearB, int monthB, int dayB, int yearT, int monthT, int dayT, string exp)
         {
-            DateTime a = new DateTime(2020, 12, 12);
-            DateTime b = new DateTime(2020, 12, 13);
+            DateTime a = new DateTime(yearB, monthB, dayB);
+            DateTime b = new DateTime(yearT, monthT, dayT);
             var actualResult = Program.Date(a, b);
-            Assert.Equal("years = 0, months = 0, days = 1", actualResult);
-        }
-
-        [Fact]
-        public void Data1996()
-        {
-            DateTime a = new DateTime(1996, 12, 12);
-            DateTime b = new DateTime(2020, 12, 13);
-            var actualResult = Program.Date(a, b);
-            Assert.Equal("years = 24, months = 0, days = 1", actualResult);
-        }
-
-        [Fact]
-        public void Data2010()
-        {
-            DateTime a = new DateTime(2010, 12, 12);
-            DateTime b = new DateTime(2020, 12, 13);
-            var actualResult = Program.Date(a, b);
-            Assert.Equal("years = 10, months = 0, days = 1", actualResult);
-        }
-
-        [Fact]
-        public void DataQuals()
-        {
-            DateTime a = new DateTime(2020, 12, 12);
-            DateTime b = new DateTime(2020, 12, 12);
-            var actualResult = Program.Date(a, b);
-            Assert.Equal("years = 0, months = 0, days = 0", actualResult);
-        }
-
-        [Fact]
-        public void DataBefore()
-        {
-            DateTime a = new DateTime(2020, 12, 12);
-            DateTime b = new DateTime(2020, 12, 11);
-            var actualResult = Program.Date(a, b);
-            Assert.Equal("years = 0, months = 0, days = -1", actualResult);
+            Assert.Equal(exp, actualResult);
         }
     }
 }

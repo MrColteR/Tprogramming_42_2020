@@ -13,14 +13,20 @@ namespace CourseApp
             return y;
         }
 
-        public static string Date(DateTime olddate, DateTime zeroTime)
+        public static string Date(DateTime birthdaydate, DateTime todaydate)
         {
-            Console.WriteLine(olddate);
-            Console.WriteLine(zeroTime);
-            int years = zeroTime.Year - olddate.Year;
-            int months = zeroTime.Month - olddate.Month;
-            int days = zeroTime.Day - olddate.Day;
-            return $"years = {years}, months = {months}, days = {days}";
+            var today = todaydate.Ticks;
+            var birthday = birthdaydate.Ticks;
+            if (birthday <= today)
+            {
+                var a = today - birthday;
+                DateTime one = new DateTime(a);
+                return $"Возраст: {one.Year - 1} лет(год), {one.Month - 1} месяцев(месяц), {one.Day - 1} дней(день)";
+            }
+            else
+            {
+                return $"Не верный возвраст";
+            }
         }
 
         public static (double x, double y)[] TaskA(double a, double b, double xn, double xk, double dx)
@@ -87,9 +93,10 @@ namespace CourseApp
             union1.UnionInfo();
             Console.WriteLine();
 
-            DateTime zeroTime = DateTime.Today;
-            DateTime olddate = new DateTime(2020, 12, 9);
-            Console.WriteLine(Date(olddate, zeroTime));
+            DateTime birthday = new DateTime(2000, 12, 15);
+            DateTime today = DateTime.Now;
+            var age = Program.Date(birthday, today);
+            Console.WriteLine(age);
 
             Console.ReadKey();
         }
